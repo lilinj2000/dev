@@ -1,4 +1,4 @@
-FROM centos:6
+FROM centos:7
 MAINTAINER Linjiang Li "lilinj2000@gmail.com"
 ENV REFRESHED_AT 2017-05-15
 
@@ -6,8 +6,7 @@ ENV REFRESHED_AT 2017-05-15
 RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 
 # install man pages
-# RUN yum install -y man-db man-pages
-RUN yum install -y man man-pages
+RUN yum install -y man-db man-pages
 
 # install gcc & g++
 # RUN yum install -y gcc gcc-c++
@@ -52,7 +51,5 @@ RUN /root/install.sh && rm -f /root/install.sh
 
 # install myemacs for chinese support
 COPY myemacs /usr/bin/
-
-ENV PATH "/opt/rh/devtoolset-2/root/usr/bin:$PATH"
 
 CMD ["/bin/bash"]

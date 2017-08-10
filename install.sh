@@ -13,13 +13,13 @@
 # " > ~/.gitconfig
 
 # upgrade gcc & g++
-wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
+# wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
 
-yum install -y devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils
+# yum install -y devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils
 
-sed -i 's/PATH=/PATH=\/opt\/rh\/devtoolset-2\/root\/usr\/bin:/g' /root/.bash_profile
+# sed -i 's/PATH=/PATH=\/opt\/rh\/devtoolset-2\/root\/usr\/bin:/g' /root/.bash_profile
 
-export PATH=/opt/rh/devtoolset-2/root/usr/bin:$PATH
+# export PATH=/opt/rh/devtoolset-2/root/usr/bin:$PATH
 
 # install cpplint
 wget https://github.com/lilinj2000/styleguide/archive/gh-pages.zip && unzip gh-pages.zip
