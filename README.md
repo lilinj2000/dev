@@ -1,1 +1,1 @@
-centos7 dev
+ubuntu16.04 dev
