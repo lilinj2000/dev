@@ -47,9 +47,10 @@ RUN yum install -y sqlite sqlite-devel mysql mysql-devel
 # install extension config & software
 COPY install.sh /root/
 
-RUN /root/install.sh && rm -f /root/install.sh
+RUN chmod 755 /root/install.sh && /root/install.sh && rm -f /root/install.sh
 
 # install myemacs for chinese support
 COPY myemacs /usr/bin/
+RUN chmod 755 /usr/bin/myemacs
 
 CMD ["/bin/bash"]
