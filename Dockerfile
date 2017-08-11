@@ -49,7 +49,7 @@ RUN apt-get clean
 # install extension config & software
 COPY install.sh /root/
 
-RUN /root/install.sh && rm -f /root/install.sh
+RUN chmod /root/install.sh && /root/install.sh && rm -f /root/install.sh
 
 # install myemacs for chinese support
 COPY myemacs /usr/bin/
