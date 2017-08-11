@@ -46,7 +46,7 @@ RUN yum install -y valgrind
 RUN yum install -y sqlite sqlite-devel mysql mysql-devel
 
 # clean cached data
-RUN yum clean
+RUN yum clean all
 
 # install extension config & software
 COPY install.sh /root/
