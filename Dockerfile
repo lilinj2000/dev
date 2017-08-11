@@ -20,7 +20,7 @@ RUN apt-get install -y cmake && apt-get clean
 RUN apt-get install -y gdb && apt-get clean
 
 # install openssl
-RUN apt-get install -y openssl openssl-devel.x86_64 && apt-get clean
+RUN apt-get install -y openssl && apt-get clean
 
 # install python package
 RUN apt-get install -y python-setuptools && easy_install pip virtualenv && apt-get clean
