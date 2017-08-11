@@ -14,7 +14,7 @@ RUN apt-get install -y gcc g++
 RUN apt-get install -y autotools-dev autoconf automake
 
 # install cmake
-RUN apt-get install -y cmake
+RUN apt-get install -y cmake cmake-curses-gui
 
 # install gdb
 RUN apt-get install -y gdb
