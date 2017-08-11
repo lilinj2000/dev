@@ -8,7 +8,7 @@ RUN apt-get update
 RUN apt-get install -y man-db manpages manpages-dev
 
 # install gcc & g++
-# RUN apt-get install -y gcc && apt-get clean
+# RUN apt-get install -y gcc g++
 
 # install autotools
 RUN apt-get install -y autotools-dev autoconf automake
