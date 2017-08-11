@@ -2,46 +2,49 @@ FROM ubuntu:16.04
 MAINTAINER Linjiang Li "lilinj2000@gmail.com"
 ENV REFRESHED_AT 2017-08-10
 
-RUN apt-get update && apt-get clean
+RUN apt-get update
 
 # install man pages
-RUN apt-get install -y man-db && apt-get clean
+RUN apt-get install -y man-db manpages manpages-dev
 
 # install gcc & g++
 # RUN apt-get install -y gcc && apt-get clean
 
 # install autotools
-RUN apt-get install -y autotools-dev autoconf automake && apt-get clean
+RUN apt-get install -y autotools-dev autoconf automake
 
 # install cmake
-RUN apt-get install -y cmake && apt-get clean
+RUN apt-get install -y cmake
 
 # install gdb
-RUN apt-get install -y gdb && apt-get clean
+RUN apt-get install -y gdb
 
 # install openssl
-RUN apt-get install -y openssl && apt-get clean
+RUN apt-get install -y openssl
 
 # install python package
-RUN apt-get install -y python-setuptools && easy_install pip virtualenv && apt-get clean
+RUN apt-get install -y python-setuptools && easy_install pip virtualenv
 
 # install misc
-RUN apt-get install -y net-tools curl wget unzip file && apt-get clean
+RUN apt-get install -y net-tools curl wget unzip file
 
 # install emacs
-RUN apt-get install -y emacs && apt-get clean
+RUN apt-get install -y emacs
 
 # install git & svn
-RUN apt-get install -y git subversion && apt-get clean
+RUN apt-get install -y git subversion
 
 # install perl support
-# RUN apt-get install -y perl-Digest-MD5.x86_64 && apt-get clean
+# RUN apt-get install -y perl-Digest-MD5.x86_64
 
 # install valgrind
 RUN apt-get install -y valgrind && apt-get clean
 
 # install sqlite & mysql
-RUN apt-get install -y sqlite sqlite-devel mysql mysql-devel && apt-get clean
+RUN apt-get install -y sqlite libsqlite3-dev mysql-client 
+
+# clean cached data
+RUN apt-get clean
 
 # install extension config & software
 COPY install.sh /root/
