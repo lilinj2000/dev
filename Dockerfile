@@ -53,6 +53,7 @@ RUN chmod 755 /root/install.sh && /root/install.sh && rm -f /root/install.sh
 
 # install myemacs for chinese support
 COPY myemacs /usr/bin/
+RUN chmod 755 /usr/bin/myemacs
 
 CMD ["/bin/bash"]
  
