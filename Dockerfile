@@ -26,7 +26,7 @@ RUN apt-get install -y openssl && apt-get clean
 RUN apt-get install -y python-setuptools && easy_install pip virtualenv && apt-get clean
 
 # install misc
-RUN apt-get install -y which net-tools curl wget unzip file && apt-get clean
+RUN apt-get install -y net-tools curl wget unzip file && apt-get clean
 
 # install emacs
 RUN apt-get install -y emacs && apt-get clean
