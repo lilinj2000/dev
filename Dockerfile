@@ -56,4 +56,6 @@ RUN chmod 755 /root/install.sh && /root/install.sh && rm -f /root/install.sh
 COPY myemacs /usr/bin/
 RUN chmod 755 /usr/bin/myemacs
 
+ENV TZ "Asia/Shanghai"
+
 CMD ["/bin/bash"]
