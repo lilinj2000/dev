@@ -59,4 +59,6 @@ RUN chmod 755 /usr/bin/myemacs
 
 ENV PATH "/opt/rh/devtoolset-2/root/usr/bin:$PATH"
 
+ENV TZ "Asia/Shanghai"
+
 CMD ["/bin/bash"]
