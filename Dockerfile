@@ -43,6 +43,9 @@ RUN apt-get install -y valgrind && apt-get clean
 # install sqlite & mysql
 RUN apt-get install -y sqlite libsqlite3-dev mysql-client 
 
+# install zoneinfo
+RUN apt-get install -y tzdata
+
 # clean cached data
 RUN apt-get clean
 
