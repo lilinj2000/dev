@@ -50,7 +50,9 @@ RUN yum clean all
 # install extension config & software
 COPY install.sh /root/
 
-RUN chmod 755 /root/install.sh && /root/install.sh && rm -f /root/install.sh
+RUN chmod 755 /root/install.sh; sync \
+    && /root/install.sh; sync \
+    && rm -f /root/install.sh
 
 # install myemacs for chinese support
 COPY myemacs /usr/bin/
