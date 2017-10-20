@@ -27,8 +27,8 @@ RUN yum install -y openssl openssl-devel.x86_64
 # install python package
 RUN yum install -y python-setuptools && easy_install pip virtualenv
 
-# install cpplint && cppclean
-RUN pip install cpplint cppclean
+# install argparse, cpplint && cppclean
+RUN pip install argparse cpplint cppclean
 
 # install misc
 RUN yum install -y which net-tools wget unzip file
