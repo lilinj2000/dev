@@ -21,14 +21,7 @@ sed -i 's/PATH=/PATH=\/opt\/rh\/devtoolset-2\/root\/usr\/bin:/g' /root/.bash_pro
 
 export PATH=/opt/rh/devtoolset-2/root/usr/bin:$PATH
 
-# install cpplint
-wget https://github.com/lilinj2000/styleguide/archive/gh-pages.zip && unzip gh-pages.zip
-
-cp styleguide-gh-pages/cpplint/cpplint.py /usr/bin
-
 # cp styleguide-gh-pages/google-c-style.el ~/.emacs.d
-
-rm -rf gh-pages.zip styleguide-gh-pages
 
 # emacs config
 # echo """
@@ -43,7 +36,7 @@ wget https://github.com/lilinj2000/cppcheck/archive/master.zip && unzip master.z
 
 cd cppcheck-master
 
-./deploy.sh
+make install CFGDIR=/usr/bin/cfg
 
 cd .. && rm -rf cppcheck-master master.zip
 
