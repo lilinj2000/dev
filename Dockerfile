@@ -48,6 +48,13 @@ RUN yum install -y valgrind
 # install sqlite & mysql
 RUN yum install -y sqlite sqlite-devel mysql mysql-devel
 
+# install java 8
+RUN yum install -y java-1.8.0-openjdk.x86_64
+
+# install jenkins
+ENV JENKINS_HOME /opt/jenkins/data
+RUN curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
+
 # clean cached data
 RUN yum clean all
 
