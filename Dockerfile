@@ -5,9 +5,12 @@ ENV REFRESHED_AT 2017-12-21
 # remove the tsflags on yum.conf
 RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 
+RUN curl -o /etc/yum.repos.d/devtools-2.repo -L http://people.centos.org/tru/devtools-2/devtools-2.repo 
+
 # install packages
 RUN yum install -y \
       man man-pages \
+      devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils \
       make autoconf automake libtool cmake \
       gdb \
       openssl openssl-devel.x86_64 \
@@ -21,12 +24,6 @@ RUN yum install -y \
       java-1.8.0-openjdk.x86_64 \
       zlib-devel bzip2-devel \
       ncurses-devel
-
-# upgrade gcc
-RUN wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
-
-RUN yum install -y \
-      devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils \
 
 ENV PATH "/opt/rh/devtoolset-2/root/usr/bin:$PATH"
 
