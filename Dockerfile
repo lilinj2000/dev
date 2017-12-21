@@ -53,7 +53,7 @@ RUN yum install -y java-1.8.0-openjdk.x86_64
 
 # install jenkins
 ENV JENKINS_HOME /opt/jenkins/data
-RUN curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
+RUN mkdir -p $JENKINS_HOME && curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 # clean cached data
 RUN yum clean all
