@@ -8,7 +8,7 @@ RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 RUN wget http://people.centos.org/tru/devtools-2/devtools-2.repo -O /etc/yum.repos.d/devtools-2.repo
 
 # install packages
-# RUN yum install -y \
+RUN yum install -y \
       man man-pages \
       devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils \
       make autoconf automake libtool cmake \
