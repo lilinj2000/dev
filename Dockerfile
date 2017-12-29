@@ -74,8 +74,8 @@ RUN easy_install pip virtualenv
 RUN pip install argparse cpplint cppclean
 
 # install jenkins
-ENV JENKINS_HOME /opt/jenkins/data
-RUN mkdir -p $JENKINS_HOME && curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
+# ENV JENKINS_HOME /opt/jenkins/data
+# RUN mkdir -p $JENKINS_HOME && curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
 
 # clean cached data
 RUN yum clean all
