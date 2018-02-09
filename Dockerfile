@@ -71,7 +71,7 @@ RUN wget https://pypi.python.org/packages/69/56/f0f52281b5175e3d9ca8623dadbc3b68
 RUN easy_install pip virtualenv
 
 # install argparse, cpplint, cppclean
-RUN pip install argparse cpplint cppclean
+RUN pip install argparse cpplint cppclean pygments
 
 # install jenkins
 # ENV JENKINS_HOME /opt/jenkins/data
