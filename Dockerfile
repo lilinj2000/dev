@@ -80,9 +80,9 @@ RUN pip install argparse cpplint cppclean pygments
 # install go
 ENV GOPATH "/root/go"
 ENV PATH "$GOPATH/bin:$PATH"
-COPY rpm/golang*.rpm /root
-RUN rpm -ivh /root/golang*.rpm; sync \
-    && rm -rf golang*.rpm
+COPY rpms/golang*.rpm /root/rpms/
+RUN rpm -ivh /root/rpms/golang*.rpm; sync \
+    && rm -rf /root/rpms
 
 # install git-hooks
 RUN mkdir -p /root/go/src; sync \
