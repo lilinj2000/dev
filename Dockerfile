@@ -91,7 +91,7 @@ RUN mkdir -p /root/go/src; sync \
     unzip master.zip; sync; \
     cd git-hooks-master; sync; \
     make get; sync; \
-    go install;
+    go install; sync; \
     cd ..; sync; \
     rm -rf git-hooks-master master.zip
 
