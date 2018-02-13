@@ -77,6 +77,24 @@ RUN pip install argparse cpplint cppclean pygments
 # ENV JENKINS_HOME /opt/jenkins/data
 # RUN mkdir -p $JENKINS_HOME && curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
 
+# install go
+ENV GOPATH "/root/go"
+ENV PATH "$GOPATH/bin:$PATH"
+COPY rpm/golang*.rpm /root
+RUN rpm -ivh /root/golang*.rpm; sync \
+    && rm -rf golang*.rpm
+
+# install git-hooks
+RUN mkdir -p /root/go/src; sync \
+    && cd /root/go/src; sync \
+    && wget https://github.com/lilinj2000/git-hooks/archive/master.zip; sync; \
+    unzip master.zip; sync; \
+    cd git-hooks-master; sync; \
+    make get; sync; \
+    go install;
+    cd ..; sync; \
+    rm -rf git-hooks-master master.zip
+
 # clean cached data
 RUN yum clean all
 
