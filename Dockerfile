@@ -84,17 +84,6 @@ COPY rpms/golang*.rpm /root/rpms/
 RUN rpm -ivh /root/rpms/golang*.rpm; sync \
     && rm -rf /root/rpms
 
-# install git-hooks
-RUN mkdir -p /root/go/src; sync \
-    && cd /root/go/src; sync \
-    && wget https://github.com/lilinj2000/git-hooks/archive/master.zip; sync; \
-    unzip master.zip; sync; \
-    cd git-hooks-master; sync; \
-    make get; sync; \
-    go install; sync; \
-    cd ..; sync; \
-    rm -rf git-hooks-master master.zip
-
 # clean cached data
 RUN yum clean all
 
