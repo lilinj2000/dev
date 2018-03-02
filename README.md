@@ -1,1 +1,1 @@
-centos6 dev
+angular dev
