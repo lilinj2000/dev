@@ -14,14 +14,12 @@ RUN yum install -y \
       make autoconf automake libtool cmake \
       gdb \
       openssl openssl-devel.x86_64 \
-      emacs \
       which net-tools wget unzip file \
       git subversion \
       perl-Digest-MD5.x86_64 \
       valgrind \
       sqlite sqlite-devel \
       mysql mysql-devel \
-      java-1.8.0-openjdk.x86_64 \
       zlib-devel bzip2-devel \
       ncurses-devel \
       flex bison
@@ -74,23 +72,8 @@ RUN easy_install pip virtualenv
 # install argparse, cpplint, cppclean
 RUN pip install argparse cpplint cppclean pygments
 
-# install jenkins
-# ENV JENKINS_HOME /opt/jenkins/data
-# RUN mkdir -p $JENKINS_HOME && curl -o /opt/jenkins/jenkins.war -L mirrors.jenkins.io/war-stable/latest/jenkins.war
-
-# install go
-ENV GOPATH "/root/go"
-ENV PATH "$GOPATH/bin:$PATH"
-COPY rpms/golang*.rpm /root/rpms/
-RUN rpm -ivh /root/rpms/golang*.rpm; sync \
-    && rm -rf /root/rpms
-
 # clean cached data
 RUN yum clean all
-
-# install myemacs for chinese support
-COPY myemacs /usr/bin/
-RUN chmod 755 /usr/bin/myemacs
 
 ENV TZ "Asia/Shanghai"
 
