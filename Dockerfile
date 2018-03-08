@@ -23,7 +23,8 @@ RUN yum install -y \
       mysql mysql-devel \
       java-1.8.0-openjdk.x86_64 \
       zlib-devel bzip2-devel \
-      ncurses-devel
+      ncurses-devel \
+      flex bison
 
 ENV PATH "/opt/rh/devtoolset-2/root/usr/bin:$PATH"
 
