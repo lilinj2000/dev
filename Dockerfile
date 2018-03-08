@@ -98,5 +98,6 @@ ARG user=llj
 ARG uid=1000
 RUN useradd -m -u ${uid} ${user}
 USER ${user}
+WORKDIR /home/llj
 
 CMD ["/bin/bash"]
