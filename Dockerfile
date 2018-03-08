@@ -93,4 +93,10 @@ RUN chmod 755 /usr/bin/myemacs
 
 ENV TZ "Asia/Shanghai"
 
+# add local user
+ARG user=llj
+ARG uid=1000
+RUN useradd -m -u ${uid} ${user}
+USER ${user}
+
 CMD ["/bin/bash"]
