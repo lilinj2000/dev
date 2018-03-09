@@ -1,6 +1,6 @@
 FROM centos:6
 MAINTAINER Linjiang Li "lilinj2000@gmail.com"
-ENV REFRESHED_AT 2017-12-21
+ENV REFRESHED_AT 2018-3-9
 
 # remove the tsflags on yum.conf
 RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
@@ -76,12 +76,5 @@ RUN pip install argparse cpplint cppclean pygments
 RUN yum clean all
 
 ENV TZ "Asia/Shanghai"
-
-# add local user
-ARG user=llj
-ARG uid=1000
-RUN useradd -m -u ${uid} ${user}
-USER ${user}
-WORKDIR /home/llj
 
 CMD ["/bin/bash"]
