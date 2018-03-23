@@ -1,6 +1,7 @@
 FROM centos:6
-MAINTAINER Linjiang Li "lilinj2000@gmail.com"
-ENV REFRESHED_AT 2018-3-9
+LABEL maintainer="Linjiang Li" \
+      email="lilinj2000@gmail.com"
+ENV REFRESHED_AT 2018-03-23
 
 # remove the tsflags on yum.conf
 RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
@@ -12,6 +13,7 @@ RUN yum install -y \
       man man-pages \
       devtoolset-2-gcc devtoolset-2-gcc-c++ devtoolset-2-binutils \
       make autoconf automake libtool cmake \
+      rpmdevtools rpmlint \
       gdb \
       openssl openssl-devel.x86_64 \
       which net-tools wget unzip file \
