@@ -1,5 +1,5 @@
 FROM centos:7
-MAINTAINER Linjiang Li "lilinj2000@gmail.com"
+LABEL maintainer="lilinj2000@gmail.com"
 ENV REFRESHED_AT 2018-05-25
 
 # remove the tsflags on yum.conf
