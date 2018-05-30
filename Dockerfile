@@ -17,7 +17,8 @@ RUN yum install -y man-db man-pages \
         git subversion \
         valgrind \
         sqlite sqlite-devel mysql mysql-devel \
-        kernel-devel
+        kernel-devel \
+        epel-release.noarch dkms
 
 # clean cached data
 RUN yum clean all
