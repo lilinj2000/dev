@@ -13,12 +13,15 @@ RUN yum install -y man-db man-pages \
         gdb \
         openssl openssl-devel.x86_64 \
         python-setuptools && easy_install pip virtualenv \
+        python-devel.x86_64 \
         which net-tools wget unzip file \
         git subversion \
         valgrind \
         sqlite sqlite-devel mysql mysql-devel \
         kernel-devel \
         epel-release.noarch dkms
+
+RUN pip install dpkt
 
 # clean cached data
 RUN yum clean all
