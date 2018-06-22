@@ -12,7 +12,7 @@ RUN yum install -y man-db man-pages \
         cmake \
         gdb \
         openssl openssl-devel \
-        python-setuptools easy_install pip virtualenv \
+        python-setuptools python-pip  \
         python-devel \
         which net-tools wget unzip file \
         git subversion \
@@ -21,7 +21,7 @@ RUN yum install -y man-db man-pages \
         kernel-devel \
         epel-release.noarch dkms
 
-RUN pip install dpkt
+RUN pip install virtualenv dpkt
 
 # clean cached data
 RUN yum clean all
