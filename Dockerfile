@@ -12,14 +12,16 @@ RUN yum install -y man-db man-pages \
         cmake \
         gdb \
         openssl openssl-devel \
-        python-setuptools python-pip  \
+        python-setuptools \
         python-devel \
         which net-tools wget unzip file \
         git subversion \
         valgrind \
         sqlite sqlite-devel mysql mysql-devel \
         kernel-devel \
-        epel-release.noarch dkms
+        epel-release.noarch
+
+RUN yum install -y python-pip dkms
 
 RUN pip install virtualenv dpkt
 
