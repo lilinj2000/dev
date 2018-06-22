@@ -11,9 +11,9 @@ RUN yum install -y man-db man-pages \
         make autoconf automake libtool \
         cmake \
         gdb \
-        openssl openssl-devel.x86_64 \
-        python-setuptools && easy_install pip virtualenv \
-        python-devel.x86_64 \
+        openssl openssl-devel \
+        python-setuptools easy_install pip virtualenv \
+        python-devel \
         which net-tools wget unzip file \
         git subversion \
         valgrind \
