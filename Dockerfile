@@ -19,7 +19,8 @@ RUN yum install -y man-db man-pages \
         valgrind \
         sqlite sqlite-devel mysql mysql-devel \
         kernel-devel \
-        epel-release.noarch
+        epel-release.noarch \
+        flex bison
 
 RUN yum install -y python-pip dkms
 
