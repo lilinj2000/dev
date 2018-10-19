@@ -20,7 +20,8 @@ RUN yum install -y man-db man-pages \
         sqlite sqlite-devel mysql mysql-devel \
         kernel-devel \
         epel-release.noarch \
-        flex bison
+        flex bison \
+        uuid-devel
 
 RUN yum install -y python-pip dkms
 
@@ -28,6 +29,31 @@ RUN pip install virtualenv dpkt cpplint
 
 # clean cached data
 RUN yum clean all
+
+# install cppcheck
+RUN wget https://github.com/lilinj2000/cppcheck/archive/master.zip; sync; \
+    unzip master.zip; sync; \
+    cd cppcheck-master; sync; \
+    make install CFGDIR=/usr/bin/cfg; sync; \
+    cd ..; sync; \
+    rm -rf cppcheck-master master.zip
+
+# install lcov
+RUN wget https://github.com/lilinj2000/lcov/archive/master.zip; sync; \
+    unzip master.zip; sync; \
+    cd lcov-master; sync; \
+    make install; sync; \
+    cd ..; sync; \
+    rm -rf lcov-master master.zip
+
+# install daemonize
+RUN wget https://github.com/lilinj2000/daemonize/archive/master.zip; sync; \
+    unzip master.zip; sync; \
+    cd daemonize-master; sync; \
+    ./configure; sync; \
+    make install; sync; \
+    cd ..; sync; \
+    rm -rf daemonize-master master.zip
 
 ENV TZ "Asia/Shanghai"
 
