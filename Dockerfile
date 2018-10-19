@@ -24,7 +24,7 @@ RUN yum install -y man-db man-pages \
 
 RUN yum install -y python-pip dkms
 
-RUN pip install virtualenv dpkt
+RUN pip install virtualenv dpkt cpplint
 
 # clean cached data
 RUN yum clean all
