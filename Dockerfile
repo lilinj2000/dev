@@ -21,7 +21,7 @@ RUN yum install -y man-db man-pages \
         kernel-devel \
         epel-release.noarch \
         flex bison \
-        uuid-devel
+        libuuid-devel
 
 RUN yum install -y python-pip dkms
 
