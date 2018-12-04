@@ -11,6 +11,7 @@ RUN yum install -y man-db man-pages \
         make autoconf automake libtool \
         gdb \
         openssl openssl-devel \
+        ncurses-devel.x86_64 \
         python-setuptools \
         python-devel \
         which net-tools wget unzip file \
