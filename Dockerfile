@@ -9,7 +9,6 @@ RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 RUN yum install -y man-db man-pages \
         gcc gcc-c++ \
         make autoconf automake libtool \
-        cmake \
         gdb \
         openssl openssl-devel \
         python-setuptools \
@@ -29,6 +28,15 @@ RUN pip install virtualenv dpkt cpplint
 
 # clean cached data
 RUN yum clean all
+
+# install cmake
+RUN wget https://github.com/lilinj2000/CMake/archive/master.zip; sync; \
+    unzip master.zip; sync; \
+    cd CMake-master; sync; \
+    ./bootstrap; sync; \
+    make install; sync; \
+    cd ..; sync; \
+    rm -rf CMake-master master.zip
 
 # install cppcheck
 RUN wget https://github.com/lilinj2000/cppcheck/archive/master.zip; sync; \
