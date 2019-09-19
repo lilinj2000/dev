@@ -1,5 +1,5 @@
-FROM node:9
-MAINTAINER Linjiang Li "lilinj2000@gmail.com"
+FROM node:10
+LABEL maintainer="lilinj2000@gmail.com"
 ENV REFRESHED_AT 2018-03-02
 
 RUN npm install -g @angular/cli
