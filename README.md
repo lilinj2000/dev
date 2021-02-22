@@ -1,1 +1,1 @@
-centos7 dev
+python3.8 dev
