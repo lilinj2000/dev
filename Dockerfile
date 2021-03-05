@@ -9,6 +9,7 @@ RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 RUN yum install -y man-db man-pages
 
 # install docker
+RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 RUN yum install -y docker-ce docker-ce-cli
 
 # install pip
