@@ -13,7 +13,7 @@ RUN yum-config-manager --add-repo https://download.docker.com/linux/centos/docke
 RUN yum install -y docker-ce docker-ce-cli
 
 # install pip
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py; python get-pip.py
+RUN curl https://bootstrap.pypa.io/2.7/get-pip.py -o get-pip.py; python get-pip.py
 
 RUN pip install virtualenv docker-compose
 
