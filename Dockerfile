@@ -1,12 +1,27 @@
-FROM python:3.8
+FROM centos:7
 LABEL maintainer="lilinj2000@gmail.com"
-ENV REFRESHED_AT 2021-02-22
+ENV REFRESHED_AT 2021-03-05
 
-COPY requirements.txt /root/requirements.txt
+# remove the tsflags on yum.conf
+RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
 
-# install
-RUN pip install -r /root/requirements.txt 
+# install man pages
+RUN yum install -y man-db man-pages
+
+# install docker
+RUN yum install -y docker-ce docker-ce-cli
+
+# install pip
+RUN yum install -y python-pip
+
+RUN pip install virtualenv docker-compose
+
+# clean cached data
+RUN yum clean all
 
 ENV TZ "Asia/Shanghai"
 
 CMD ["/bin/bash"]
+
+
+
