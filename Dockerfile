@@ -1,6 +1,6 @@
 FROM centos:7
-MAINTAINER Linjiang Li "lilinj2000@gmail.com"
-ENV REFRESHED_AT 2017-05-15
+LABEL maintainer="lilinj2000@gmail.com"
+ENV REFRESHED_AT 2022-06-13
 
 # remove the tsflags on yum.conf
 RUN sed -i 's/tsflags/# tsflags/g' /etc/yum.conf
