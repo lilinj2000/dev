@@ -1,1 +1,1 @@
-ansible on centos7 dev
+centos7 dev
